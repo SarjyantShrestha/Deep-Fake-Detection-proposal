@@ -2,7 +2,7 @@
 \usepackage{setspace}
 \usepackage{titlesec}
 \usepackage[utf8]{inputenc}
-\usepackage[top=1in,bottom=1in,left=1.5in,right=1in]{geometry}
+\usepackage[top=1in,bottom=1in,left=1.5in,right=1in,headheight=0.5in,headsep=0.5in]{geometry}
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{amsmath,amssymb,amsfonts}
@@ -12,9 +12,31 @@
 \usepackage{array}
 \usepackage{caption}
 \usepackage{multirow}
-\usepackage{placeins}
 \usepackage[table]{xcolor}
+\usepackage{fix-cm} % Allow arbitrary scaling of fonts
 
+% Custom command for chapter headings
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\fontsize{16}{16}\selectfont}{\chaptertitlename\ \thechapter}{20pt}{\fontsize{16}{16}\selectfont\bfseries}
+
+% Setting for section headings
+\titleformat{\section}[block]
+  {\normalfont\bfseries\fontsize{14}{14}\selectfont}{\thesection}{1em}{}
+
+% Setting for subsection headings
+\titleformat{\subsection}[block]
+  {\normalfont\bfseries\fontsize{13}{13}\selectfont}{\thesubsection}{1em}{}
+
+% Setting for subsubsection headings
+\titleformat{\subsubsection}[block]
+  {\normalfont\bfseries\fontsize{12}{12}\selectfont}{\thesubsubsection}{1em}{}
+
+% Adjusting spacing before and after paragraphs
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% Adjusting line spacing
+\onehalfspacing
 
 \begin{document}
   \include{title}
