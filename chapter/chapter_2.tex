@@ -3,21 +3,44 @@
 Deepfakes, which involve the unauthorized swapping of face images, are frequently carried out without the knowledge or consent of individuals, including celebrities and politicians. Notably, historical instances, such as the facial image swapping in a photograph of Abraham Lincoln (Badale et al., 2018), underscore the longstanding nature of this challenge. Addressing these concerns, Yang, Li \& Lyu (2019) proposed a model leveraging head pose inconsistency to detect deepfakes, enabling the creation of synthetic faces for various individuals while preserving the original facial expressions.
 Jagdale \& Shah (2019) introduced the NA-VSR algorithm for super resolution, involving video conversion into frames, median filtering to remove noise, and bicubic interpolation for pixel density enhancement. Additionally, Yadav \& Salmani (2019) elucidated the working principles of deep fake techniques, emphasizing the high precision value in face image swapping.
 Generative Adversarial Neural Networks (GANs) play a pivotal role in deepfake generation, comprising a generator and a discriminator. The generator synthesizes fake images from a given dataset, while the discriminator evaluates the authenticity of the generated images. The inherent risks of deepfakes, including character defamation, potential harm to individuals, and the dissemination of fake news in society, highlight the importance of addressing these challenges.
-Existing approaches encounter issues such as inefficiency in detecting deepfake images, high error rates, prolonged computation times, and data access inaccuracies. This work, FF-LBPH-DBN, focuses on minimizing computational complexity while efficiently applying various metrological parameters. Table 1 presents a survey-based overview of existing approaches for detecting fake images (Vivek et al., 2018).
+Existing approaches encounter issues such as inefficiency in detecting deepfake images, high error rates, prolonged computation times, and data access inaccuracies. This work, FF-LBPH-DBN, focuses on minimizing computational complexity while efficiently applying various metrological parameters. Figure 1 presents a survey-based overview of existing approaches for detecting fake images (Vivek et al., 2018).
 
-% \begin{table}[h]
-%     \caption{Data Sources with numbers}
-%     \begin{tabular}{|c|c|c|c|}
-%         \hline
-%         \textbf{Author} & \textbf{Name of the method}  & \textbf{Classifier}  & \textbf{Data set} \\\hline
-%         Nepali News Corpus & 14364 Articles  & Vectorization & \\\hline
-%         Facebook & 5021 Comments & Labeling\\\hline
-%         Twitter & 2160 Tweets & Labeling\\\hline
-%         Annapurnapost.com & 400 Articles Vectorization, & Labeling\\\hline
-%         Nagarik News & 4481Articles & Vectorization\\\hline
-%         National News & 7452 Articles & Vectorization\\\hline
-%         Bsgnews.com & 1000 Articles & Vectorization, Labeling\\\hline
-%         Setopati News & 1090 Articles & Vectorization\\\hline
-%         NELRALEC Corpora & 798961 Sentences & POS Tagging\\\hline
-%     \end{tabular}
-% \end{table}
+\begin{table}[h]
+  \centering
+  \caption{Compilation of related work}
+  \small
+  \begin{tabular}{|p{2.5cm}|p{4cm}|p{2.5cm}|p{3cm}|p{3cm}|}
+    \hline
+    \textbf{Researcher} & \textbf{Contributions} & \textbf{Scope} & \textbf{Advantage} & \textbf{Weakness} \\
+    \hline
+    L. Verdoliva (2020) & Presenting an overview of contemporary manipulation techniques & Fake media & Deepfake's backstory is presented. Issues and possible solutions are explored. & There has not been any in-depth review of the articles. \\
+    \hline
+    Tolosana et al. (2020) & Examining face-altering techniques & Image deepfake detection & Different criteria for evaluating articles are taken into account. & It is unclear how articles are chosen for review. \\
+    \hline
+    Mirsky and Lee (2021) & Providing deepfake creation and detection services & Deepfake in general & Challenges and potential guidance are discussed. & It is unclear how articles are chosen for review. \\
+    \hline
+    Castillo Camacho and Wang (2021) & Examining DL-based image forensic methods & Image forensic & Taking into account all aspects of the criteria for image forensics. & It is unclear how articles are chosen for review. \\
+    \hline
+    P. Yu et al. (2021) & Focusing on deepfake video detection, its history, current research, and plans & Deepfake video & An in-depth description of future work. In-depth examination of datasets. & There is no comparison between the articles. \\
+    \hline
+    Rana et al. (2022) & Demonstrating several cutting-edge deepfake algorithms & DL-ML and statistical models & There is a comparison between the articles. & There is no discussion of all kinds of deepfake applications. \\
+    \hline
+    Ours & Providing a comprehensive review of the literature on deepfake detection techniques based on DL-based algorithms & DL-ML methods in the video, image, audio, and hybrid multimedia detection & An in-depth description of future work. In-depth examination of datasets. Challenges and potential guidance are discussed. & Papers published before 2018 are not allowed.  \\
+    \hline
+  \end{tabular}
+\end{table}
+
+    % L. Verdoliva (2020) & Presenting an overview of contemporary manipulation techniques & Fake media & Deepfake's backstory is presented. Issues and possible solutions are explored. There has not been any in-depth review of the articles. & \\
+    % \hline
+    % Tolosana et al. (2020) & Examining face-altering techniques & Image deepfake detection & Different criteria for evaluating articles are taken into account. It is unclear how articles are chosen for review. & \\
+    % \hline
+    % Mirsky and Lee (2021) & Providing deepfake creation and detection services & Deepfake in general & Challenges and potential guidance are discussed. It is unclear how articles are chosen for review. & \\
+    % \hline
+    % Castillo Camacho and Wang (2021) & Examining DL-based image forensic methods & Image forensic & Taking into account all aspects of the criteria for image forensics. It is unclear how articles are chosen for review. & \\
+    % \hline
+    % P. Yu et al. (2021) & Focusing on deepfake video detection, its history, current research, and plans & Deepfake video & An in-depth description of future work. In-depth examination of datasets. There is no comparison between the articles. & \\
+    % \hline
+    % Rana et al. (2022) & Demonstrating several cutting-edge deepfake algorithms & DL-ML and statistical models & There is a comparison between the articles. There is no discussion of all kinds of deepfake applications. & \\
+    % \hline
+    % Ours & Providing a comprehensive review of the literature on deepfake detection techniques based on DL-based algorithms & DL-ML methods in video, image, audio, and hybrid multimedia detection & An in-depth description of future work. In-depth examination of datasets. Challenges and potential guidance are discussed. Papers published before 2018 are not allowed. & \\
+    % \hline
