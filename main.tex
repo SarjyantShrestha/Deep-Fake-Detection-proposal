@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{report}
 \usepackage{setspace}
 \usepackage{titlesec}
 \usepackage[utf8]{inputenc}
@@ -15,21 +15,22 @@
 \usepackage[table]{xcolor}
 \usepackage{fix-cm} % Allow arbitrary scaling of fonts
 
-% Custom command for chapter headings
+% custom command for chapter headings
 \titleformat{\chapter}[display]
-  {\normalfont\bfseries\fontsize{16}{16}\selectfont}{\chaptertitlename\ \thechapter}{20pt}{\fontsize{16}{16}\selectfont\bfseries}
+  {\rmfamily\bfseries\fontsize{16}{18}\selectfont}{\chaptertitlename\ \thechapter}{20pt}{\fontsize{16}{18}\selectfont\bfseries}
 
-% Setting for section headings
+% setting for section headings
 \titleformat{\section}[block]
-  {\normalfont\bfseries\fontsize{14}{14}\selectfont}{\thesection}{1em}{}
+  {\rmfamily\bfseries\fontsize{14}{16}\selectfont}{\thesection}{1em}{}
 
-% Setting for subsection headings
+% setting for subsection headings
 \titleformat{\subsection}[block]
-  {\normalfont\bfseries\fontsize{13}{13}\selectfont}{\thesubsection}{1em}{}
+  {\rmfamily\bfseries\fontsize{13}{14}\selectfont}{\thesubsection}{1em}{}
 
-% Setting for subsubsection headings
+% setting for subsubsection headings
 \titleformat{\subsubsection}[block]
-  {\normalfont\bfseries\fontsize{12}{12}\selectfont}{\thesubsubsection}{1em}{}
+  {\rmfamily\bfseries\fontsize{12}{12}\selectfont}{\thesubsubsection}{1em}{}
+
 
 % Adjusting spacing before and after paragraphs
 \setlength{\parindent}{0pt}
