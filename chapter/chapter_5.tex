@@ -10,6 +10,35 @@
         We have found many datasets on the internet from popular platforms like kaggle, github. For this project we will be using the datasets provided by ondyari/ FaceForensics \url{https://github.com/ondyari/FaceForensics}.\\
             For POS tagging, the data from NELRALEC [10] The following table shows the amount
             of data collected from different sources and their usage in our project;
+
+    
+        \section{Implementation}
+        Deepfake images are structured and classified into fake and real face. The data set generated is splited into training set and test set. The training set is then fed into a Deep learning model (ResNet Architecture). This model is tested whether it can identify/detect the fake face using the test data.
+
+        \vspace{0.5in}
+        \begin{figure}[hbt!]
+            \centering
+                \includegraphics[width=1\textwidth]{./img/implementation.jpg}
+                \caption{Methodological Architecture of Our Proposed System}
+        \end{figure}
+
+        \subsection*{ResNet}
+        ResNet architecture introduced the concept called Residual Blocks. In this network, we use a technique called skip connections. The skip connection connects activations of a  layer to further layers by skipping some layers in between. This forms a residual block. Resnets are made by stacking these residual blocks together. 
+        The approach behind this network is instead of layers learning the underlying mapping, we allow the network to fit the residual mapping. So, instead of say H(x), initial mapping, let the network fit,
+        \center{F(x) := H(x) - x 
+            which gives H(x) := F(x) + x}
+
+        \begin{figure}[hbt!]
+            \centering
+                \includegraphics[width=1\textwidth]{./img/ResNet.PNG}
+                \caption{Working of ResNet}
+        \end{figure}
+
+        \begin{figure}[hbt!]
+            \centering
+                \includegraphics[height=1.4\textwidth]{./img/ResNetArc.jpg}
+                \caption{ResNet Architecture}
+        \end{figure}
 % 10Table 6.1 Data Sources with numbers\\
 
 %     \begin{table}[h]
