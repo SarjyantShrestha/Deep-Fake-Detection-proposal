@@ -7,10 +7,7 @@
                 \caption{Prototype Model for Software Development}
         \end{figure}
         \section{DATA COLLECTION}
-        We have found many datasets on the internet from popular platforms like kaggle, github. For this project we will be using the datasets provided by ondyari/ FaceForensics \url{https://github.com/ondyari/FaceForensics}.\\
-            For POS tagging, the data from NELRALEC [10] The following table shows the amount
-            of data collected from different sources and their usage in our project;
-
+        To gather the dataset, authentic facial images of real individuals will be utilized and marked as "Real." Subsequently, each image will undergo a deepfake transformation using a Python script called FaceSwap, and the resulting images will be labeled as "Fake".
     
         \section{Implementation}
         Deepfake images are structured and classified into fake and real face. The data set generated is splited into training set and test set. The training set is then fed into a Deep learning model (ResNet Architecture). This model is tested whether it can identify/detect the fake face using the test data.
