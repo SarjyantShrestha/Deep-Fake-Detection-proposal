@@ -26,5 +26,5 @@
 \contentsline {section}{\numberline {4.1}SOFTWARE DEVELOPMENT APPROACH}{9}{section.4.1}%
 \contentsline {section}{\numberline {4.2}DATA COLLECTION}{10}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Implementation}{10}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Gantt Chart}{13}{subsection.4.3.1}%
-\contentsline {chapter}{\numberline {5}Expected Outcomes}{14}{chapter.5}%
+\contentsline {subsection}{\numberline {4.3.1}Gantt Chart}{12}{subsection.4.3.1}%
+\contentsline {chapter}{\numberline {5}Expected Outcomes}{13}{chapter.5}%
