@@ -10,15 +10,14 @@ Xin Yang, Yuezun Li, and Siwei Lyu.
 \newblock Exposing deep fakes using inconsistent head poses.
 \newblock In {\em ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, pages 8261--8265. IEEE, 2019.
 
-\bibitem{jagdale2019novel}
-Rohita Jagdale and Sanjeevani Shah.
-\newblock A novel algorithm for video super-resolution.
-\newblock In {\em Information and Communication Technology for Intelligent Systems: Proceedings of ICTIS 2018, Volume 1}, pages 533--544. Springer, 2019.
-
 \bibitem{yadav2019deepfake}
 Digvijay Yadav and Sakina Salmani.
 \newblock Deepfake: A survey on facial forgery technique using generative adversarial network.
 \newblock In {\em 2019 International conference on intelligent computing and control systems (ICCS)}, pages 852--857. IEEE, 2019.
+
+\bibitem{goodfellow2014generative}
+Ian~J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio.
+\newblock Generative adversarial networks, 2014.
 
 \bibitem{heidari2023deepfake}
 Arash Heidari, Nima Jafari~Navimipour, Hasan Dag, and Mehmet Unal.
