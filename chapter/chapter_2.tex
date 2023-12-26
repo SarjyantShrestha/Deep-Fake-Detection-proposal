@@ -9,44 +9,20 @@ by Goodfellow et al(2014). \cite{goodfellow2014generative}. GANs consist of gene
  
 %  Existing approaches suffer from problems such as inefficiency in deepfake image detection, high error rates, long computation times, and data access inaccuracies.
 %  Our work focuses on improving efficiency through a different approach to using ResNet architecture for deepfake detection.
- Figure 1 shows a compilation of related studies on deepfake detection (Heidari et al., 2023)\cite{heidari2023deepfake}.
+ Figure 1 shows a compilation of Image Deepfaketechniques'approaches,attributes and features (Heidari et al., 2023)\cite{heidari2023deepfake}.
 
-\begin{table}[ht]
-  \centering
-  \caption{Compilation of related work}
-  \small
-  \begin{tabular}{|p{2cm}|p{3cm}|p{2.5cm}|p{3cm}|p{3cm}|}
-    \hline
-    \textbf{Researcher} & \textbf{Contributions} & \textbf{Scope} & \textbf{Advantage} & \textbf{Weakness} \\
-    \hline
-    L. Verdoliva (2020) & Presenting an overview of contemporary manipulation techniques & Fake media & Deepfake's backstory is presented. Issues and possible solutions are explored. & There has not been any in-depth review of the articles. \\
-    \hline
-    Tolosana et al. (2020) & Examining face-altering techniques & Image deepfake detection & Different criteria for evaluating articles are taken into account. & It is unclear how articles are chosen for review. \\
-    \hline
-    Mirsky and Lee (2021) & Providing deepfake creation and detection services & Deepfake in general & Challenges and potential guidance are discussed. & It is unclear how articles are chosen for review. \\
-    \hline
-    Castillo Camacho and Wang (2021) & Examining DL-based image forensic methods & Image forensic & Taking into account all aspects of the criteria for image forensics. & It is unclear how articles are chosen for review. \\
-    \hline
-    P. Yu et al. (2021) & Focusing on deepfake video detection, its history, current research, and plans & Deepfake video & An in-depth description of future work. In-depth examination of datasets. & There is no comparison between the articles. \\
-    \hline
-    Rana et al. (2022) & Demonstrating several cutting-edge deepfake algorithms & DL-ML and statistical models & There is a comparison between the articles. & There is no discussion of all kinds of deepfake applications. \\
-    \hline
-    Heidari et al. (2023) & Providing a comprehensive review of the literature on deepfake detection techniques based on DL-based algorithms & DL-ML methods in the video, image, audio, and hybrid multimedia detection & An in-depth description of future work. In-depth examination of datasets. Challenges and potential guidance are discussed. & Papers published before 2018 are not allowed.  \\
-    \hline
-  \end{tabular}
-\end{table}
 
-    % L. Verdoliva (2020) & Presenting an overview of contemporary manipulation techniques & Fake media & Deepfake's backstory is presented. Issues and possible solutions are explored. There has not been any in-depth review of the articles. & \\
-    % \hline
-    % Tolosana et al. (2020) & Examining face-altering techniques & Image deepfake detection & Different criteria for evaluating articles are taken into account. It is unclear how articles are chosen for review. & \\
-    % \hline
-    % Mirsky and Lee (2021) & Providing deepfake creation and detection services & Deepfake in general & Challenges and potential guidance are discussed. It is unclear how articles are chosen for review. & \\
-    % \hline
-    % Castillo Camacho and Wang (2021) & Examining DL-based image forensic methods & Image forensic & Taking into account all aspects of the criteria for image forensics. It is unclear how articles are chosen for review. & \\
-    % \hline
-    % P. Yu et al. (2021) & Focusing on deepfake video detection, its history, current research, and plans & Deepfake video & An in-depth description of future work. In-depth examination of datasets. There is no comparison between the articles. & \\
-    % \hline
-    % Rana et al. (2022) & Demonstrating several cutting-edge deepfake algorithms & DL-ML and statistical models & There is a comparison between the articles. There is no discussion of all kinds of deepfake applications. & \\
-    % \hline
-    % Ours & Providing a comprehensive review of the literature on deepfake detection techniques based on DL-based algorithms & DL-ML methods in video, image, audio, and hybrid multimedia detection & An in-depth description of future work. In-depth examination of datasets. Challenges and potential guidance are discussed. Papers published before 2018 are not allowed. & \\
-    % \hline
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+  \hline
+  \textbf{Authors} & \textbf{Main Idea} & \textbf{Advantages} & \textbf{Dataset} & \textbf{Method} \\ \hline
+  Zhang Zhao, and Li (2020) & Using a binary classifier trained by a CNN & The achieved accuracy was 97\%, The AUC stood at 97.6\% & Milborrow University of Cape Town dataset & CNN \\ \hline
+  Lee et al. (2021) & Suggesting an approach with an effective end-to-end false face detection pipeline & Obtaining 72.52\% AUROC, Obtaining 93.99\% accuracy on difficult low-resolution pictures & HFM dataset & GAN \\ \hline
+  Guo et al. (2021) & Providing a preprocessing module named AMTEN for face image forensics & AMTENnet achieves an average accuracy of up to 98.52\%, Achieves desirable preprocessing & HEF dataset & CNN \\ \hline
+  Guamera et al. (2020) & Presenting an expectation-maximization method trained to identify and extract a fingerprint & Obtaining a 93\% accuracy rate, In a real-world scenario, efficacy is demonstrated, High robustness & The FACEAPP, a dataset, and CELEBA images & Expectation-maximization + CNN \\ \hline
+  Ld Yue et al. (2020) & Presenting the MCNet to utilize multi-domain spatial, frequency, and compression domain characteristics & High robustness, High accuracy & ALASKA dataset & CNN \\ \hline
+\end{tabularx}
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+  \hline
+  I Yang et al. (2021) & Using the image saliency to determine the texture depth and pixel difference between & Detection accuracy is 99.90\% & Faceforensics++ dataset & CNN + simple linear iterative clustering \\ \hline  
+\end{tabularx}
+
