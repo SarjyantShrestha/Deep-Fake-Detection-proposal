@@ -54,4 +54,9 @@ Jiachen Yang, Shuai Xiao, Aiyun Li, Guipeng Lan, and Huihui Wang.
 \newblock Detecting fake images by identifying potential texture difference.
 \newblock {\em Future Generation Computer Systems}, 125:127--135, 2021.
 
+\bibitem{hung2021multi}
+Jason~C Hung and Jia-Wei Chang.
+\newblock Multi-level transfer learning for improving the performance of deep neural networks: Theory and practice from the tasks of facial emotion recognition and named entity recognition.
+\newblock {\em Applied Soft Computing}, 109:107491, 2021.
+
 \end{thebibliography}

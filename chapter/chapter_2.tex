@@ -14,11 +14,11 @@ There have been many approaches to detect image deepfake. Figure 1 (Heidari et a
 
 \begin{table}
 \caption{Image Deepfake Techniques}
-\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
   \hline
   \textbf{Authors} & \textbf{Main Idea} & \textbf{Advantages} & \textbf{Dataset} & \textbf{Method} \\ \hline
   Zhang Zhao, and Li (2020) \cite{zhang2020novel} & Using a binary classifier trained by a CNN & The achieved accuracy was 97\%, The AUC stood at 97.6\% & Milborrow University of Cape Town dataset & CNN \\ \hline
-  Lee et al. (2021) \cite{lee2021detecting}& Suggesting an approach with an effective end-to-end false face detection pipeline & Obtaining 72.52\% AUROC, Obtaining 93.99\% accuracy on difficult low-resolution pictures & HFM dataset & GAN \\ \hline
+  Lee et al. (2021) \cite{lee2021detecting}& Suggesting an approach with an effective end-to-end false face detection pipeline  that can identify fake face pictures. & Obtaining 72.52\% AUROC, Obtaining 93.99\% accuracy on difficult low-resolution pictures & HFM dataset & GAN \\ \hline
   Guo et al. (2021) \cite{guo2021fake}& Providing a preprocessing module named AMTEN for face image forensics & AMTENnet achieves an average accuracy of up to 98.52\%, Achieves desirable preprocessing & HEF dataset & CNN \\ \hline
   Guarnera et al. (2020) \cite{guarnera2020fighting} & Presenting an expectation-maximization method trained to identify and extract a fingerprint & Obtaining a 93\% accuracy rate, In a real-world scenario, efficacy is demonstrated, High robustness & The FACEAPP, a dataset, and CELEBA images & Expectation-maximization + CNN \\ \hline
   I.-J. Yu et al. (2020) \cite{yu2020manipulation} & Presenting the MCNet to utilize multi-domain spatial, frequency, and compression domain characteristics & High robustness, High accuracy & ALASKA dataset & CNN \\ \hline
@@ -26,7 +26,9 @@ There have been many approaches to detect image deepfake. Figure 1 (Heidari et a
 \end{table}
 
 \newpage
-\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}\hline
-  J Yang et al. (2021) \cite{yang2021detecting} & Using the image saliency to determine the texture depth and pixel difference between & Detection accuracy is 99.90\% & Faceforensics++ dataset & CNN + simple linear iterative clustering \\ \hline  
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}\hline
+  J Yang et al. (2021) \cite{yang2021detecting} & Using the image saliency to determine the texture depth and pixel difference between actual and fake facial images.& Detection accuracy is 99.90\% & Faceforensics++ dataset & CNN + simple linear iterative clustering \\ \hline  
+
+  Hsu et al.(2020) \cite{hung2021multi} & Presentinga an image detector comprised of an enhanced DenseNet backbone network and Slamese network architecture. & Achieving a modest level of precision and recall & CelebA & Pairwise learning \\ \hline
 \end{tabularx}
 % \end{table}
