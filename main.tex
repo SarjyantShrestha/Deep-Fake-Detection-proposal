@@ -1,6 +1,7 @@
 \documentclass[12pt]{report}
 \usepackage{setspace}
 \usepackage{titlesec}
+\usepackage[acronym]{glossaries}
 \usepackage[utf8]{inputenc}
 \usepackage[top=1in,bottom=1in,left=1.5in,right=1in,headheight=0.5in,headsep=0.5in]{geometry}
 \usepackage{graphicx}
@@ -16,6 +17,13 @@
 \usepackage{fix-cm}
 \usepackage{ragged2e}
 \usepackage{tabularx}
+
+\renewcommand{\acronymname}{List of Abbreviations}
+\makeglossaries
+\newacronym{gans}{GANs}{\textbf{G}enerative \textbf{A}dversarial \textbf{N}etworks}
+\newacronym{cnn}{CNN}{\textbf{C}onvolution \textbf{N}eural \textbf{N}etwork}
+\newacronym{auc}{AUC}{\textbf{A}rea \textbf{U}nder \textbf{T}he ROC \textbf{C}urve}
+\newacronym{roc}{ROC}{\textbf{R}eciever \textbf{O}perating \textbf{C}haracteristic \textbf{C}urve}
 
 % custom command for chapter headings
 \titleformat{\chapter}[display]
@@ -50,6 +58,8 @@
   \tableofcontents
   \listoffigures
   \listoftables
+  \glsaddall
+  \printacronyms
   \include{chapter/chapter_1}
   \include{chapter/chapter_2}
   \include{chapter/chapter_3}
