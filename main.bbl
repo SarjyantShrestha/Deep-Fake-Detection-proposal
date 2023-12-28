@@ -19,16 +19,6 @@ Digvijay Yadav and Sakina Salmani.
 Ian~J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio.
 \newblock Generative adversarial networks, 2014.
 
-\bibitem{heidari2023deepfake}
-Arash Heidari, Nima Jafari~Navimipour, Hasan Dag, and Mehmet Unal.
-\newblock Deepfake detection using deep learning methods: A systematic and comprehensive review.
-\newblock {\em Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery}, page e1520, 2023.
-
-\bibitem{zhang2020novel}
-Weiguo Zhang, Chenggang Zhao, and Yuxing Li.
-\newblock A novel counterfeit feature extraction technique for exposing face-swap images based on deep learning and error level analysis.
-\newblock {\em Entropy}, 22(2):249, 2020.
-
 \bibitem{lee2021detecting}
 Sangyup Lee, Shahroz Tariq, Youjin Shin, and Simon~S Woo.
 \newblock Detecting handcrafted facial image manipulations and gan-generated facial images using shallow-fakefacenet.
@@ -43,6 +33,16 @@ Zhiqing Guo, Gaobo Yang, Jiyou Chen, and Xingming Sun.
 Luca Guarnera, Oliver Giudice, and Sebastiano Battiato.
 \newblock Fighting deepfake by exposing the convolutional traces on images.
 \newblock {\em IEEE Access}, 8:165085--165098, 2020.
+
+\bibitem{heidari2023deepfake}
+Arash Heidari, Nima Jafari~Navimipour, Hasan Dag, and Mehmet Unal.
+\newblock Deepfake detection using deep learning methods: A systematic and comprehensive review.
+\newblock {\em Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery}, page e1520, 2023.
+
+\bibitem{zhang2020novel}
+Weiguo Zhang, Chenggang Zhao, and Yuxing Li.
+\newblock A novel counterfeit feature extraction technique for exposing face-swap images based on deep learning and error level analysis.
+\newblock {\em Entropy}, 22(2):249, 2020.
 
 \bibitem{yu2020manipulation}
 In-Jae Yu, Seung-Hun Nam, Wonhyuk Ahn, Myung-Joon Kwon, and Heung-Kyu Lee.

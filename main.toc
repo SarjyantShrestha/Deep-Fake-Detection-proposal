@@ -4,22 +4,22 @@
 \contentsline {section}{\numberline {1.2}Problem Statement}{1}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Objective}{2}{section.1.3}%
 \contentsline {chapter}{\numberline {2}Literature Review}{3}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Requirement Analysis}{6}{chapter.3}%
-\contentsline {section}{\numberline {3.1}SOFTWARE REQUIREMENT}{6}{section.3.1}%
-\contentsline {section}{\numberline {3.2}FUNCTIONAL REQUIREMENT}{7}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Dataset Labeler}{7}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}User-Friendly Dashboard}{7}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}NON-FUNCTIONAL REQUIREMENT}{7}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Reliability}{8}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Maintainability}{8}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Portability}{8}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}FEASIBILITY STUDY}{8}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Economic Feasibility}{8}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Technical Feasibility}{8}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Operational Feasibility}{9}{subsection.3.4.3}%
-\contentsline {chapter}{\numberline {4}Methodology}{10}{chapter.4}%
-\contentsline {section}{\numberline {4.1}SOFTWARE DEVELOPMENT APPROACH}{10}{section.4.1}%
-\contentsline {section}{\numberline {4.2}DATA COLLECTION}{11}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Implementation}{11}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Gantt Chart}{13}{subsection.4.3.1}%
-\contentsline {chapter}{\numberline {5}Expected Outcomes}{14}{chapter.5}%
+\contentsline {chapter}{\numberline {3}Requirement Analysis}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}SOFTWARE REQUIREMENT}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}FUNCTIONAL REQUIREMENT}{8}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Dataset Labeler}{8}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}User-Friendly Dashboard}{8}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}NON-FUNCTIONAL REQUIREMENT}{8}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Reliability}{9}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Maintainability}{9}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Portability}{9}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}FEASIBILITY STUDY}{9}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Economic Feasibility}{9}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Technical Feasibility}{9}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Operational Feasibility}{10}{subsection.3.4.3}%
+\contentsline {chapter}{\numberline {4}Methodology}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}SOFTWARE DEVELOPMENT APPROACH}{11}{section.4.1}%
+\contentsline {section}{\numberline {4.2}DATA COLLECTION}{12}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Implementation}{12}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Gantt Chart}{14}{subsection.4.3.1}%
+\contentsline {chapter}{\numberline {5}Expected Outcomes}{15}{chapter.5}%
