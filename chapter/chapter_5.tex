@@ -21,7 +21,20 @@
             }
         \end{figure}
 
+        \section{CNN}
+        A Convolutional Neural Network (CNN) is a Deep Learning algorithm
+        that can take in an input image, assign importance (learnable weights and biases) to various aspects/objects in the image, and be able to differentiate one from the other. The pre-processing required in a CNN is much lower as compared to other classification algorithms. While in primitive methods filters are hand-engineered, with enough training, CNNs have the ability to learn these filters characteristics.The architecture of a CNN is analogous to that of the connectivity pattern of Neurons in the Human Brain and was inspired by the organization of the Visual Cortex. Individual neurons respond to stimuli only in a restricted region of the visual field known as the Receptive Field. A collection of such fields overlap to cover the entire visual area.A CNN typically has three layers: a convolutional layer, a pooling layer, and a fully connected layer.
 
+        Convolutional Neural Networks (CNNs) are utilized for spatial feature extraction . CNNs excel in recognizing patterns within image data by employing
+        convolutional layers and filters. The initial layers detect low-level features
+        like edges and shapes, while deeper layers abstract higher-level representations of the facial structures. The convolutional process involves
+        sliding filters across the input image, enabling the network to identify spatial hierarchies and intricate patterns.
+        \begin{figure}[hbt!]
+                \center{
+                    \includegraphics[width=0.9\textwidth]{./img/CNN.png}
+                }
+                \caption{Convolutional Neural Networks}
+        \end{figure}
 
         \subsection*{ResNet}
         ResNet architecture introduced the concept called Residual Blocks. In this network, we use a technique called skip connections. The skip connection connects activations of a  layer to further layers by skipping some layers in between. This forms a residual block. Resnets are made by stacking these residual blocks together. 
