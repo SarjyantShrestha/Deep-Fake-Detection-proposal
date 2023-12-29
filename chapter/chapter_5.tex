@@ -12,7 +12,7 @@
         \url{https://www.kaggle.com/datasets/xhlulu/140k-real-and-fake-faces}
     
         \section{Implementation}
-        Deepfake images are structured and classified into fake and real face. The dataset generated is splited into 80\% training set and 20\% test set. The training set is then fed into a Deep learning model which is repeatedly tested and iterated to generate a model that can predict the deepfake images. The model is tested using test set to generate evaluation metrics.
+        Deepfake images are structured and classified into fake and real face images.The images are preprocessed and normalised. The processed image is then fed into a \acrfull*{cnn} model which is repeatedly tested and iterated to generate a model that can predict the deepfake images. The model is tested using test set to generate evaluation metrics.
         \vspace{0.5in}
         \begin{figure}[hbt!]
             \center{
@@ -21,7 +21,7 @@
             }
         \end{figure}
 
-        
+
 
         \subsection*{ResNet}
         ResNet architecture introduced the concept called Residual Blocks. In this network, we use a technique called skip connections. The skip connection connects activations of a  layer to further layers by skipping some layers in between. This forms a residual block. Resnets are made by stacking these residual blocks together. 
