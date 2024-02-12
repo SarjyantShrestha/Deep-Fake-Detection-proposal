@@ -7,3 +7,16 @@
 *.code-workspace
 *.py
 *.pdf
+*.acn
+*.acr
+*.alg
+*.bbl
+*.blg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.ist
+*.lof
+*.lot
+*.toc
