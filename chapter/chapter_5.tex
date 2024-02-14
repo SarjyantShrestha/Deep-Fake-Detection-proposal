@@ -11,19 +11,19 @@
         We used dataset created during a Deepfake Image Detection and Reconstruction Challenge.Two datasets of real face images were used: CelebA and FFHQ. Various Deepfake images were generated using architectures such as StarGAN, GDWCT, AttGAN, StyleGAN, and StyleGAN2. Specifically, CelebA images were manipulated using pre-trained models available on GitHub for StarGAN, GDWCT, and AttGAN. Images from StyleGAN and StyleGAN2 created through FFHQ were obtained.
         
         \begin{enumerate}
-            \item CelebA : A large-scale face attributes dataset containing over 200k celebrity images with 40 labels related to facial attributes such as hair color, gender, and age. The images are in 178 x 218 JPEG format.
+            \item CelebA\cite{7410782}: A large-scale face attributes dataset containing over 200k celebrity images with 40 labels related to facial attributes such as hair color, gender, and age. The images are in 178 x 218 JPEG format.
             
-            \item FFHQ: A high-quality image dataset of human faces with variations in age, ethnicity, and image background. The images are in 1024 x 1024 PNG format.
+            \item FFHQ\cite{NVlabs_ffhq_dataset}: A high-quality image dataset of human faces with variations in age, ethnicity, and image background. The images are in 1024 x 1024 PNG format.
             
-            \item StarGAN: Capable of performing image-to-image translations on multiple domains using a single model. CelebA images were manipulated with a pre-trained model to achieve a final resolution of 256 x 256.
+            \item StarGAN\cite{choi2018stargan}: Capable of performing image-to-image translations on multiple domains using a single model. CelebA images were manipulated with a pre-trained model to achieve a final resolution of 256 x 256.
             
-            \item GDWCT: Improves styling capability. CelebA images were manipulated with a pre-trained model to achieve a final resolution of 216 x 216.
+            \item GDWCT\cite{cho2019imagetoimage}: Improves styling capability. CelebA images were manipulated with a pre-trained model to achieve a final resolution of 216 x 216.
     
-            \item AttGAN: Transfers facial attributes with constraints. CelebA images were manipulated with a pre-trained model to achieve a final resolution of 256 x 256.
+            \item AttGAN\cite{8718508}: Transfers facial attributes with constraints. CelebA images were manipulated with a pre-trained model to achieve a final resolution of 256 x 256.
         
-            \item StyleGAN: Transfers semantic content from a source domain to a target domain with a different style. Images were generated using FFHQ as the input dataset with a resolution of 1024 x 1024.
+            \item StyleGAN\cite{Karras_2020_CVPR}: Transfers semantic content from a source domain to a target domain with a different style. Images were generated using FFHQ as the input dataset with a resolution of 1024 x 1024.
         
-            \item StyleGAN2: Improves StyleGAN quality with the same task. Images were generated using FFHQ as the input dataset with a resolution of 1024 x 1024.
+            \item StyleGAN2\cite{inproceedings}: Improves StyleGAN quality with the same task. Images were generated using FFHQ as the input dataset with a resolution of 1024 x 1024.
         \end{enumerate}
 
         \section{Implementation}
