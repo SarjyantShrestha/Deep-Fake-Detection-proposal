@@ -67,9 +67,13 @@
 
         \subsection{ResNet}
             ResNet architecture introduced the concept called Residual Blocks. In this network, we use a technique called skip connections. The skip connection connects activations of a  layer to further layers by skipping some layers in between. This forms a residual block. Resnets are made by stacking these residual blocks together. The approach behind this network is instead of layers learning the underlying mapping, we allow the network to fit the residual mapping. So, instead of say H(x), initial mapping, let the network fit,
-            \center{F(x) := H(x) - x 
-                which gives H(x) := F(x) + x}
-
+            \begin{equation}
+                F(x) := H(x) - x
+            \end{equation}
+            which gives
+            \begin{equation}
+                H(x) := F(x) + x
+            \end{equation}
             \begin{figure}[hbt!]
                 \center{
                     \includegraphics[width=1\textwidth]{./img/ResNet.PNG}
@@ -77,7 +81,7 @@
                 }
             \end{figure}
 
-        % \subsection{Proposed System}
+        \subsection{Proposed System}
         % \begin{figure}
         %     \center{
         %         \includegraphics[width=0.67 \textheight]{./img/layers.png}
