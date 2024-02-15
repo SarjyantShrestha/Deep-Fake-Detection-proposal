@@ -134,9 +134,41 @@
 	\subsection*{Testing Results}
 	We used the test dataset given on the DeepFake Detection Challenge\cite{jimaging8100263} to test our models performance.
 	Testing dataset consist of 5000 fake images and 2000 real images.
+	\vspace{1pt}
 	\begin{figure}[hbt!]
 		\center{
 			\includegraphics[width=1\textwidth]{./img/confusion_matrix.png}
 			\caption{Confusion Matrix}
 		}
 	\end{figure}
+	\raggedright
+	\begin{equation}
+		\text{Accuracy} = \frac{\text{True Positive} + \text{True Negative}}{\text{True Positive} + \text{True Negative} + \text{False Positive} + \text{False Negative}}
+	\end{equation}
+	\begin{equation}
+		\text{Precision} = \frac{\text{True Positive}}{\text{True Positive} + \text{False Positive}}
+	\end{equation}
+	\begin{equation}
+		\text{Recall} = \frac{\text{True Positive}}{\text{True Positive} + \text{False Negative}} = \frac{\text{1762}}{\text{1762} + \text{238}} = \text{0.938}
+	\end{equation}
+	\begin{equation}
+		\text{F1 Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
+	\end{equation}
+	% \item Reciever Operating Characteristic (ROC) Curve
+	% \item Area Under ROC Curve
+
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{lcccc}
+		\multicolumn{5}{c}{\textbf{}} \\ 
+		\multicolumn{5}{c}{\textbf{}} \\ 
+		\textbf{} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{Support} \\
+		\textbf{Fake} & 0.95 & 0.96 & 0.96 & 5000 \\
+		\textbf{Real} & 0.90 & 0.88 & 0.89 & 2000 \\
+		\textbf{Accuracy} & \multicolumn{4}{c}{0.94} \\
+		\textbf{Macro Avg} & 0.93 & 0.92 & 0.92 & 7000 \\
+		\textbf{Weighted Avg} & 0.94 & 0.94 & 0.94 & 7000 \\ 
+		\multicolumn{5}{c}{\textbf{}} \\
+		\multicolumn{5}{c}{\textbf{}} \\
+		\end{tabular}
+	  \end{table}
