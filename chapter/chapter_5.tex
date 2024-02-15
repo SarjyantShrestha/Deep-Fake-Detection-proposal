@@ -96,3 +96,42 @@
 	\end{itemize}
 
 	\section{Model Training}
+		We tested various customs models as well as pre-trained models like VGG16\_bn, ResNet50, ResNet101, and many more. During this process, We came to a conclusion that ResNet9 was performing much better than other models. So, We are using ResNet9 architecture for further training and implementation process.
+		
+		The model begins with an input layer configured to accept images with dimensions of 128x128 pixels and three color channels (RGB). Following this, the first convolutional layer is applied, utilizing 64 filters of size 3x3. Each filter convolves across the input image, extracting various features such as edges and textures. Batch normalization is then performed to normalize the activations of the convolutional layer, enhancing training stability. Subsequently, a rectified linear unit (ReLU) activation function is applied, introducing non-linearity to the network by replacing negative values with zeros.
+
+		Moving forward, the second convolutional layer processes the output of the previous layer, applying 128 filters of size 3x3. Again, batch normalization and ReLU activation follow suit. Additionally, a max-pooling layer with a 2x2 window and a stride of 2 downsamples the feature maps, reducing spatial dimensions and computational complexity.
+
+		Next, a residual block, inspired by the ResNet architecture, is introduced. This block comprises two convolutional layers, each followed by batch normalization and ReLU activation. The output of these layers is added to the output of the second convolutional layer, fostering better gradient flow during training and mitigating the vanishing gradient problem.
+
+		Continuing, convolutional layer 3 is applied, employing 256 filters of size 3x3. Batch normalization and ReLU activation are again utilized for feature map normalization and non-linearity introduction, respectively. Another max-pooling layer further reduces spatial dimensions.
+
+		Subsequently, convolutional layer 4 is employed, employing 512 filters of size 3x3. Similar to prior layers, batch normalization and ReLU activation are applied. Following this, another residual block, akin to ResNet architecture, is employed, aiding in feature extraction and gradient flow enhancement.
+
+		Finally, a max-pooling layer with a 4x4 window reduces the spatial dimensions further. The resultant feature maps are then flattened into a 1D vector, which undergoes dropout regularization with a rate of 0.2, randomly deactivating 20\% of neurons during training to prevent overfitting. Lastly, a fully connected layer with two units, likely indicative of binary classification, applies a softmax activation function to generate class probabilities.
+	\newpage
+	\begin{figure}[hbt!]
+		\center{
+			\includegraphics[width=0.68\textheight]{./img/layers.png}
+			\caption{Architecture of ResNet9 Model}
+		}
+	\end{figure}
+
+	\section{Model Evaluation}
+	\begin{figure}[hbt!]
+		\center{
+			\includegraphics[width=0.8\textwidth]{./img/resnet9accuracy.png}
+			\caption{Accuracy vs. No. of epochs }
+		}
+	\end{figure}
+	\begin{figure}[hbt!]
+		\center{
+			\includegraphics[width=0.8\textwidth]{./img/resnet9losses.png}
+			\caption{Loss vs. No. of epochs}
+		}
+	\end{figure}
+
+	\subsection*{Testing Results}
+	We used the test dataset given on the DeepFake Detection Challenge\cite{jimaging8100263} to test our models performance.
+	Testing dataset consist of 5000 fake images and 2000 real images.
+	
