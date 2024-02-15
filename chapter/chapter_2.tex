@@ -1,7 +1,7 @@
 \chapter{Literature Review}
 Deepfakes, which involve sharing facial images without permission, are often carried out without the knowledge or consent of individuals such as celebrities or politicians. At first, swapping of face image was done in the photo of Abraham Lincoln(Badale et al., 2018)\cite{badale2018deep}. Yang, Li \& Lyu (2019)\cite{yang2019exposing} have proposed a model to detect deep fake using head poses inconsistency. Yadav \& Salmani (2019)\cite{yadav2019deepfake} have described the working principle of the deep fake techniques along with swapping of face images in a high precision value.
 
-\section{\textit{\small Deepfake Generation Techniques of Faces}}
+\section{Deepfake Generation Techniques of Faces}
 \acrshort{stargans} \cite{choi2018stargan}, proposed by Choi et al., is a method capable of performing imageto-image translations on multiple domains (such as change hair color, change gender,
 etc.) using a single model. Trained on two different types of face datasets—CelebA \cite{7410782}
 containing 40 labels related to facial attributes such as hair color, gender and age, and
@@ -15,7 +15,7 @@ desired attributes.
 Finally, one of the most recent and powerful methods regarding the entire-face synthesis is the Style Generative Adversarial Network architecture or commonly called
 StyleGAN. \cite{Giudice_2021}
 
-\section{\textit{\small Deepfake Detection Techniques}}
+\section{Deepfake Detection Techniques}
 \acrshort*{hfm} images dataset and soft computing neural network models (\acrshort*{sffn}) with an effective facial manipulating detection process were presented by Lee et al. (2021)\cite{lee2021detecting}. The \acrshort*{sffn} model is capable of identifying fake images by focusing on altered facial landmarks, using only RGB information and no metadata. The method showed improved performance in \acrfull{auc}, with a 3.99\% F1-score and 2.91\% \acrshort{auc} for detecting handcrafted fake facial images, and 93.99\% accuracy for detecting small \acrshort*{gans}-generated fake images.
 
 Guo et al. (2021)\cite{guo2021fake} developed an \acrshort*{amten} for image preprocessing. This component uses a convolution layer to retrieve photo manipulation traces, with weights adjusted during backpropagation for optimization. They also created a false face detector, \acrshort{amten}net, by combining \acrshort{amten} with a \acrshort{cnn}. The manipulation traces from \acrshort{amten} are processed through the \acrshort{cnn} to develop discriminative characteristics. Tests showed that \acrshort{amten}net achieved higher detection accuracy and generalization capabilities, outperforming other methods on the Hybrid Fake Face (HFF) dataset by 7.61\%.
