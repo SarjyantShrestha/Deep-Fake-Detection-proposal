@@ -1,58 +1,59 @@
-\documentclass[12pt]{report}
-\usepackage{setspace}
-\usepackage{titlesec}
-\usepackage[acronym]{glossaries}
+\documentclass[12pt,a4paper]{report}
 \usepackage[utf8]{inputenc}
-\usepackage[top=1in,bottom=1in,left=1.5in,right=1in,headheight=0.5in,headsep=0.5in]{geometry}
+\usepackage[top=1in,bottom=1in,left=1.5in,right=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{subcaption}
-\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsmath,amssymb,amsfonts,bbm}
 \usepackage[hidelinks]{hyperref}
 \usepackage{cite}
+\usepackage{url} 
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{svg}
 \usepackage{float}
-\usepackage{array}
-\usepackage{caption}
-\usepackage{multirow}
-\usepackage[table]{xcolor}
-\usepackage{fix-cm}
-\usepackage{ragged2e}
-\usepackage{tabularx}
-\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{placeins}
+\usepackage[export]{adjustbox}
+\usepackage{inputenc}
+\usepackage{multicol}
+\setlist[enumerate]{itemsep=0mm}
+\DeclareUnicodeCharacter{202F}{\,} 
+\newcommand\tab[1][1cm]{\hspace*{#1}} 
+\setcounter{secnumdepth}{4}
+\usepackage[pagestyles]{titlesec}
+\titleformat
+{\chapter} %command
+[display]   %shape
+{\Huge \bfseries} %format
+{Chapter \thechapter} % chapter no format
+{1ex} % separation between chapter 1 and introduction
+{}
+[
+    \vspace{0ex}
+]
 
-\renewcommand{\acronymname}{List of Abbreviations}
-\makeglossaries
-\newacronym{gans}{GAN}{Generative Adversarial N}
-\newacronym{cnn}{CNN}{Convolution Neural Network}
-\newacronym{roc}{ROC}{Reciever Operating Characteristic Curve}
-\newacronym{auc}{AUC}{Area Under The \acrfull*{roc} Curve}
-\newacronym{amten}{AMTEN}{Adaptive Manipulation Traces Extraction Network}
-\newacronym{mcnet}{MCNet}{Multi Level Correction Network}
-\newacronym{stargans}{StarGANS}{Star Generative Adversarial Networks}
-\newacronym{stylegans}{StyleGANS}{Style Generative Adversarial Networks}
-\newacronym{rafd}{RaFD}{Radboud Faces Database}
-\newacronym{hfm}{HFM}{Handcrafted Face Manipulation}
-\newacronym{sffn}{SFFN}{Shallow-FakeFaceNet}
+\titlespacing*{\chapter}{0ex}{-2ex}{4ex}
+
+
 
 
 \newcommand{\subsubsubsec}[1]{\paragraph{#1}\mbox{}\\}
 \setcounter{secnumdepth}{3}
 
-% adjusting spacing before and after paragraphs
-\setlength{\parskip}{6pt}
+% % adjusting spacing before and after paragraphs
+% \setlength{\parskip}{6pt}
 
-% adjusting line spacing
-\onehalfspacing
+% % adjusting line spacing
+% \onehalfspacing
 
 \begin{document}
-
   \include{title}
   \pagenumbering{roman}
   \include{chapter/abstract}
   \tableofcontents
   \listoffigures
   \listoftables
-  \glsaddall
-  \printacronyms
   \include{chapter/chapter_1}
   \include{chapter/chapter_2}
   \include{chapter/chapter_3}
