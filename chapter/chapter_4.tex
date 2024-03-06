@@ -176,33 +176,33 @@
 		1 & Input (Convolution 2-D) & (64*128*128) & 1792 \\ \hline
 		2 & Batch Normalization & (64*128*128) & 256 \\      \hline
 		3 & ReLU & (64*128*128) & 0 \\                       \hline
-		4 & Convolution 2-D & (128*128*128) & 3584 \\        \hline
+		4 & Convolution 2-D & (128*128*128) & 73,856 \\        \hline
 		5 & Batch Normalization & (128*128*128) & 512 \\     \hline
 		6 & ReLU & (128*128*128) & 0 \\                      \hline
 		7 & MaxPooling & (128*64*64) & 0 \\                  \hline
-		8 & Convolution 2-D & (128*64*64) & 3584 \\          \hline
+		8 & Convolution 2-D & (128*64*64) & 147,584 \\          \hline
 		9 & Batch Normalization & (128*64*64) & 512 \\       \hline
 		10 & ReLU & (128*64*64) & 0 \\                       \hline
-		11 & Convolution 2-D & (128*64*64) & 3584 \\         \hline
+		11 & Convolution 2-D & (128*64*64) & 147,584 \\         \hline
 		12 & Batch Normalization & (128*64*64) & 512 \\      \hline
 		13 & ReLU & (128*64*64) & 0 \\                       \hline
-		14 & Convolution 2-D & (256*64*64) & 7168 \\         \hline
+		14 & Convolution 2-D & (256*64*64) & 295,168 \\         \hline
 		15 & Batch Normalization & (256*64*64) & 1024 \\     \hline
 		16 & ReLU & (128*64*64) & 0 \\                       \hline
 		17 & MaxPooling & (256*32*32) & 0 \\                 \hline
-		18 & Convolution 2-D & (512*32*32) & 14336 \\        \hline
+		18 & Convolution 2-D & (512*32*32) & 1,180,160 \\        \hline
 		19 & Batch Normalization & (512*32*32) & 2048 \\     \hline
 		20 & ReLU & (512*32*32) & 0 \\                       \hline
 		21 & MaxPooling & (512*16*16) & 0 \\                 \hline
-		22 & Convolution 2-D & (512*16*16) & 14336 \\        \hline
+		22 & Convolution 2-D & (512*16*16) & 2,359,808 \\        \hline
 		23 & Batch Normalization & (512*16*16) & 2048 \\     \hline
 		24 & ReLU & (512*16*16) & 0 \\                       \hline
-		25 & Convolution 2-D & (512*16*16) & 14336 \\        \hline
+		25 & Convolution 2-D & (512*16*16) & 2,359,808 \\        \hline
 		26 & Batch Normalization & (512*16*16) & 2048 \\     \hline
 		27 & ReLU & (512*16*16) & 0 \\                       \hline
 		28 & MaxPooling & (512*4*4) & 0 \\                   \hline
 		29 & Flatten & 8192 & 0 \\                           \hline
-		30 & DropOut & 8192 & 0 \\                           \hline
+		30 & Dropout & 8192 & 0 \\                           \hline
 		31 & Dense & 2 & 16386 \\\hline
 		\end{tabular}
 	\end{table}
@@ -210,9 +210,9 @@
 	\begin{table}[hbt!]
 		\begin{tabularx}{1.03\textwidth}{|X|X|}
 			\hline
-			Total Parameters & 16386 \\ \hline
-			Trainable Parameters & 16386 \\  \hline
-			Non-Trainable Parameters & 0 \\ \hline
+			Total Parameters & 6,591,106 \\ \hline
+			Trainable Parameters & 6,586,626 \\  \hline
+			Non-Trainable Parameters & 4,480 \\ \hline
 		\end{tabularx}
 		\caption{Output Dimensions and Parameter for Each Layer}
 	\end{table}
