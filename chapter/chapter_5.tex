@@ -7,7 +7,7 @@
 		using pre-trained models available on GitHub for StarGAN, GDWCT, and AttGAN.
 		Images from StyleGAN and StyleGAN2 created through FFHQ were obtained. A sample of real and fake images are shown below:
 
-	\begin{figure}[ht]
+	\begin{figure}[hbt!]
 		\centering
 		\begin{minipage}{0.45\textwidth}
 				\centering
@@ -26,7 +26,7 @@
 	\subsection{Data Augmentation}
 		To balance our dataset, we augmented our images to achieve a total of 25000 images for each category. For the 5000 fake images, we applied four different transformations, resulting in 20000 augmented fake images. For the real images, we randomly selected and transformed 3750 images, generating 15000 augmented real images. Various transformations, such as rotation, compression, scaling, and mirroring, were implemented. A sample of each transformation is shown below:
 
-	\begin{figure}[ht]
+	\begin{figure}[hbt!]
 		\centering
 		\begin{minipage}{0.45\textwidth}
 				\centering
@@ -110,32 +110,33 @@
 
 		Finally, a max-pooling layer with a 4x4 window reduces the spatial dimensions further. The resultant feature maps are then flattened into a 1D vector, which undergoes dropout regularization with a rate of 0.2, randomly deactivating 20\% of neurons during training to prevent overfitting. Lastly, a fully connected layer with two units, likely indicative of binary classification, applies a softmax activation function to generate class probabilities.
 	\newpage
-	\begin{figure}[ht]
+	\begin{figure}[hbt!]
 		\center{
-			\includegraphics[width=0.64\textheight]{./img/layers.png}
+			\includegraphics[width=0.68\textheight]{./img/layers.png}
 			\caption{Architecture of ResNet9 Model}
 		}
 	\end{figure}
 
 	\section{Model Evaluation}
-	\begin{figure}[ht]
+	\begin{figure}[hbt!]
 		\center{
 			\includegraphics[width=0.8\textwidth]{./img/resnet9accuracy.png}
 			\caption{Accuracy vs. No. of epochs }
 		}
 	\end{figure}
-	\begin{figure}[ht]
+	\begin{figure}[hbt!]
 		\center{
 			\includegraphics[width=0.8\textwidth]{./img/resnet9losses.png}
 			\caption{Loss vs. No. of epochs}
 		}
 	\end{figure}
 
+	\pagebreak
 	\subsection*{Testing Results}
 	We used the test dataset given on the DeepFake Detection Challenge\cite{jimaging8100263} to test our models performance.
 	Testing dataset consist of 5000 fake images and 2000 real images.
 	\vspace{1pt}
-	\begin{figure}[ht]
+	\begin{figure}[hbt!]
 		\center{
 			\includegraphics[width=1\textwidth]{./img/confusion_matrix.png}
 			\caption{Confusion Matrix}
@@ -169,16 +170,16 @@
 		FP = False Positive,
 		FN = False Negative
 		\item Reciever Operating Characteristic (ROC) Curve
-			\begin{figure}[ht]
+			\begin{figure}[hbt!]
 				\center{
 					\includegraphics[width=1\textwidth]{./img/ROC.png}
 					\caption{Reciever Operating Characteristic (ROC) Curve}
 				}
 			\end{figure}
 
-			\textbf{Area Under ROC Curve = 0.9796}
+			\textbf{Area Under ROC Curve = 0.9209}
 
-\begin{table}[ht]
+\begin{table}[h!]
 		\centering
 		\begin{tabular}{lccccc}
 		\multicolumn{6}{c}{\textbf{}} \\ 
@@ -195,18 +196,18 @@
 		\end{table}
 \end{enumerate}
 
-
-\newpage
+\clearpage
 \section{User Interface}
-\begin{figure}[htbp]
+
+\begin{figure}[hbt!]
 	\center{
-		\includegraphics[width=0.14\textheight]{./img/UI1.png}
+		\includegraphics[width=0.66\textwidth]{./img/UI1.png}
 		\caption{Demonstration of model detecting real image}
 	}
 \end{figure}
-\begin{figure}[htbp]
+\begin{figure}[hbt!]
 	\center{
-		\includegraphics[width=0.14\textheight]{./img/UI2.jpg}
+		\includegraphics[width=0.66\textwidth]{./img/UI2.jpg}
 		\caption{Demonstration of model detecting fake image}
 	}
 \end{figure}
