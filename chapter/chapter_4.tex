@@ -59,19 +59,19 @@
         
         
         \subsubsection{CNN}
-            A Convolutional Neural Network (CNN) is a Deep Learning algorithm
+            A Convolutional Neural Network (CNN) \cite{oshea2015introduction} is a Deep Learning algorithm
             that can take in an input image, assign importance (learnable weights and biases) to various aspects/objects in the image, and be able to differentiate one from the other. The pre-processing required in a CNN is much lower as compared to other classification algorithms. While in primitive methods filters are hand-engineered, with enough training, CNNs have the ability to learn these filters characteristics.The architecture of a CNN is analogous to that of the connectivity pattern of Neurons in the Human Brain and was inspired by the organization of the Visual Cortex. Individual neurons respond to stimuli only in a restricted region of the visual field known as the Receptive Field. A collection of such fields overlap to cover the entire visual area.A CNN typically has three layers: a convolutional layer, a pooling layer, and a fully connected layer.
 
         \begin{figure}[hbt!]
                 \center{
-                    \includegraphics[width=0.9\textwidth]{./img/CNN.png}
+                    \includegraphics[width=0.85\textwidth]{./img/CNN.png}
                 }
-                \caption{Convolutional Neural Networks}
+                \caption{Convolutional Neural Networks} \cite{E1ICAW_2018_v16n3_173}
         \end{figure}
 
         \newpage
         \subsubsection{ResNet}
-            ResNet architecture introduced the concept called Residual Blocks. In this network, we use a technique called skip connections. The skip connection connects activations of a  layer to further layers by skipping some layers in between. This forms a residual block. Resnets are made by stacking these residual blocks together. The approach behind this network is instead of layers learning the underlying mapping, we allow the network to fit the residual mapping. So, instead of say H(x), initial mapping, let the network fit,
+            ResNet\cite{DBLP:journals/corr/HeZRS15} architecture introduced the concept called Residual Blocks. In this network, we use a technique called skip connections. The skip connection connects activations of a  layer to further layers by skipping some layers in between. This forms a residual block. Resnets are made by stacking these residual blocks together. The approach behind this network is instead of layers learning the underlying mapping, we allow the network to fit the residual mapping. So, instead of say H(x), initial mapping, let the network fit,
             \begin{equation}
                 F(x) := H(x) - x
             \end{equation}
@@ -81,9 +81,9 @@
             \end{equation}
             \begin{figure}[hbt!]
                 \center{
-                    \includegraphics[width=1\textwidth]{./img/ResNet.PNG}
-                    \caption{ResNet}
+                \includegraphics[width=1\textwidth]{./img/ResNet.PNG}
                 }
+                \caption{ResNet} \cite{enwiki:1205293224}
             \end{figure}
 
         \newpage

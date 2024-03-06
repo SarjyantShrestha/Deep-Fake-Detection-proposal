@@ -96,7 +96,7 @@
 	\end{itemize}
 
 	\section{Model Training}
-		We tested various customs models as well as pre-trained models like VGG16\_bn, ResNet50, ResNet101, and many more. During this process, We came to a conclusion that ResNet9 was performing much better than other models. So, We are using ResNet9 architecture for further training and implementation process.
+		We tested various customs models as well as pre-trained models like VGG16\_bn\cite{simonyan2015deep}, ResNet50 \cite{DBLP:journals/corr/HeZRS15}, ResNet101\cite{DBLP:journals/corr/HeZRS15}, and many more. During this process, We came to a conclusion that ResNet9 was performing much better than other models. So, We are using ResNet9 architecture for further training and implementation process.
 		
 		The model begins with an input layer configured to accept images with dimensions of 128x128 pixels and three color channels (RGB). Following this, the first convolutional layer is applied, utilizing 64 filters of size 3x3. Each filter convolves across the input image, extracting various features such as edges and textures. Batch normalization is then performed to normalize the activations of the convolutional layer, enhancing training stability. Subsequently, a rectified linear unit (ReLU) activation function is applied, introducing non-linearity to the network by replacing negative values with zeros.
 
