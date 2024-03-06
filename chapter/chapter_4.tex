@@ -9,9 +9,36 @@
             }
         \end{figure}
 
-        \pagebreak
-
         \section{Implementation}
+
+		\subsection{CNN}
+            A Convolutional Neural Network (CNN) \cite{oshea2015introduction} is a Deep Learning algorithm
+            that can take in an input image, assign importance (learnable weights and biases) to various aspects/objects in the image, and be able to differentiate one from the other. The pre-processing required in a CNN is much lower as compared to other classification algorithms. While in primitive methods filters are hand-engineered, with enough training, CNNs have the ability to learn these filters characteristics.The architecture of a CNN is analogous to that of the connectivity pattern of Neurons in the Human Brain and was inspired by the organization of the Visual Cortex. Individual neurons respond to stimuli only in a restricted region of the visual field known as the Receptive Field. A collection of such fields overlap to cover the entire visual area.A CNN typically has three layers: a convolutional layer, a pooling layer, and a fully connected layer.
+
+        \begin{figure}[hbt!]
+                \center{
+                    \includegraphics[width=0.85\textwidth]{./img/CNN.png}
+                }
+                \caption{Convolutional Neural Networks} \cite{E1ICAW_2018_v16n3_173}
+        \end{figure}
+
+        \subsection{ResNet}
+            ResNet\cite{DBLP:journals/corr/HeZRS15} architecture introduced the concept called Residual Blocks. In this network, we use a technique called skip connections. The skip connection connects activations of a  layer to further layers by skipping some layers in between. This forms a residual block. Resnets are made by stacking these residual blocks together. The approach behind this network is instead of layers learning the underlying mapping, we allow the network to fit the residual mapping. So, instead of say H(x), initial mapping, let the network fit,
+            \begin{equation}
+                F(x) := H(x) - x
+            \end{equation}
+            which gives
+            \begin{equation}
+                H(x) := F(x) + x
+            \end{equation}
+            \begin{figure}[hbt!]
+                \center{
+                \includegraphics[width=1\textwidth]{./img/ResNet.PNG}
+                }
+                \caption{ResNet} \cite{enwiki:1205293224}
+            \end{figure}
+
+		\pagebreak
         \subsection{Data Collection}
         We used dataset created during a Deepfake Image Detection and Reconstruction Challenge.Two datasets of real face images were used: CelebA and FFHQ. Various Deepfake images were generated using architectures such as StarGAN, GDWCT, AttGAN, StyleGAN, and StyleGAN2. Specifically, CelebA images were manipulated using pre-trained models available on GitHub for StarGAN, GDWCT, and AttGAN. Images from StyleGAN and StyleGAN2 created through FFHQ were obtained.
         
@@ -28,7 +55,7 @@
         
             \item StyleGAN\cite{Karras_2020_CVPR}: Transfers semantic content from a source domain to a target domain with a different style. Images were generated using FFHQ as the input dataset with a resolution of 1024 x 1024.
         
-            \item StyleGAN2\cite{inproceedings}: Improves StyleGAN quality with the same task. Images were generated using FFHQ as the input dataset with a resolution of 1024 x 1024.
+            \item StyleGAN2\cite{inproceedings}: Improves StyleGAN quality with the same task. Images were generated using FFHQ as the input dataset with a resolution of 1024x1024.
         \end{enumerate}
         
         \begin{figure}[hbt!]
@@ -46,7 +73,7 @@
             \end{minipage}
         \end{figure}
 
-    \subsubsection{Data Augmentation}
+    \subsection{Data Augmentation}
     To balance our dataset, we augmented our images to achieve a total of 25000 images for each category. For the 5000 fake images, we applied four different transformations, resulting in 20000 augmented fake images. For the real images, we randomly selected and transformed 3750 images, generating 15000 augmented real images. \\\\
     The transformations applied were as follows:
     \begin{enumerate}
@@ -56,20 +83,6 @@
         \item Compression: Images were compressed using a quality factor between [50,99].
     \end{enumerate}
     After adding the augmented images to the original dataset, we ended up with a total of 25000 real and 25000 fake images.
-
-    \subsubsection{Data Normalization}
-        First, we computed the mean and standard deviation of the entire dataset, which consists of both the original dataset and the augmented dataset. The normalization process was then applied using the following formula:
-        \begin{equation}
-        x = \frac{x - \mu}{\sigma}
-        \end{equation}
-        where \(x\) represents the pixel values of each image pixel.
-
-    \subsubsection{Data Splitting}
-        We partitioned our dataset into a training set, comprising 80\% of the dataset, and a validation set, consisting of 20\% of the dataset. This division ensures that the model has an ample amount of data for learning, while also offering a subset of the data to assess the model's performance.
-
-	\section{Data Preprocessing}
-	\subsection{Data Augmentation}
-		To balance our dataset, we augmented our images to achieve a total of 25000 images for each category. For the 5000 fake images, we applied four different transformations, resulting in 20000 augmented fake images. For the real images, we randomly selected and transformed 3750 images, generating 15000 augmented real images. Various transformations, such as rotation, compression, scaling, and mirroring, were implemented. A sample of each transformation is shown below:
 
 	\begin{figure}[hbt!]
 		\centering
@@ -99,7 +112,7 @@
 				\caption{Mirrored Images}
 		\end{minipage}
 	\end{figure}
-
+	\pagebreak
 	\subsection{Data Normalization}
 	First, we computed the mean and standard deviation of the entire dataset, which consists of both the original dataset and the augmented dataset. The normalization process was then applied using the following formula:
 	\begin{equation}
@@ -108,10 +121,10 @@
 	where \(x\) represents the pixel values of each image pixel. \\\\
 	This approach standardizes the features to have a mean of 0 and a standard deviation of 1. This standardization is crucial because certain machine learning algorithms are sensitive to the scale of the input features.
 
-	\subsection{Data Splitting}
-	We partitioned our dataset into a training set, comprising 80\% of the dataset, and a validation set, consisting of 20\% of the dataset. This division ensures that the model has an ample amount of data for learning, while also offering a subset of the data to assess the model's performance.
+    \subsection{Data Splitting}
+        We partitioned our dataset into a training set, comprising 80\% of the dataset, and a validation set, consisting of 20\% of the dataset. This division ensures that the model has an ample amount of data for learning, while also offering a subset of the data to assess the model's performance.
 
-	\section{Setting Parameters}
+	\subsection{Setting Parameters}
 	\begin{itemize}
 		\item \textbf{Number of epochs : 50} \\
 			The number of epochs refers to the number of times the complete training dataset is passed through the network during the training process. Each epoch consists of one forward pass (input to output) and one backward pass (error calculation and weight updates) for all the training samples.
@@ -139,7 +152,7 @@
 			It adapts the learning rate for each parameter individually based on the past gradients and squared gradients making it well suited for training models.
 	\end{itemize}
 
-	\section{Model Training}
+	\subsection{Model Training}
 		We tested various customs models as well as pre-trained models like VGG16\_bn\cite{simonyan2015deep}, ResNet50 \cite{DBLP:journals/corr/HeZRS15}, ResNet101\cite{DBLP:journals/corr/HeZRS15}, and many more. During this process, We came to a conclusion that ResNet9 was performing much better than other models. So, We are using ResNet9 architecture for further training and implementation process.\\\\
 		The model begins with an input layer configured to accept images with dimensions of 128x128 pixels and three color channels (RGB). Following this, the first convolutional layer is applied, utilizing 64 filters of size 3x3. Each filter convolves across the input image, extracting various features such as edges and textures. Batch normalization is then performed to normalize the activations of the convolutional layer, enhancing training stability. Subsequently, a rectified linear unit (ReLU) activation function is applied, introducing non-linearity to the network by replacing negative values with zeros.\\\\
 		Moving forward, the second convolutional layer processes the output of the previous layer, applying 128 filters of size 3x3. Again, batch normalization and ReLU activation follow suit. Additionally, a max-pooling layer with a 2x2 window and a stride of 2 downsamples the feature maps, reducing spatial dimensions and computational complexity.\\\\
@@ -194,45 +207,18 @@
 		\end{tabular}
 	\end{table}
 
-	\begin{table}[ht]
+	\begin{table}[hbt!]
 		\begin{tabularx}{1.03\textwidth}{|X|X|}
 			\hline
 			Total Parameters & 16386 \\ \hline
 			Trainable Parameters & 16386 \\  \hline
 			Non-Trainable Parameters & 0 \\ \hline
-			\end{tabularx}
-			\caption{Output Dimensions and Parameter for Each Layer}
-		\end{table}
+		\end{tabularx}
+		\caption{Output Dimensions and Parameter for Each Layer}
+	\end{table}
         
         
-        \subsection{CNN}
-            A Convolutional Neural Network (CNN) \cite{oshea2015introduction} is a Deep Learning algorithm
-            that can take in an input image, assign importance (learnable weights and biases) to various aspects/objects in the image, and be able to differentiate one from the other. The pre-processing required in a CNN is much lower as compared to other classification algorithms. While in primitive methods filters are hand-engineered, with enough training, CNNs have the ability to learn these filters characteristics.The architecture of a CNN is analogous to that of the connectivity pattern of Neurons in the Human Brain and was inspired by the organization of the Visual Cortex. Individual neurons respond to stimuli only in a restricted region of the visual field known as the Receptive Field. A collection of such fields overlap to cover the entire visual area.A CNN typically has three layers: a convolutional layer, a pooling layer, and a fully connected layer.
-
-        \begin{figure}[hbt!]
-                \center{
-                    \includegraphics[width=0.85\textwidth]{./img/CNN.png}
-                }
-                \caption{Convolutional Neural Networks} \cite{E1ICAW_2018_v16n3_173}
-        \end{figure}
-
-        \newpage
-        \subsection{ResNet}
-            ResNet\cite{DBLP:journals/corr/HeZRS15} architecture introduced the concept called Residual Blocks. In this network, we use a technique called skip connections. The skip connection connects activations of a  layer to further layers by skipping some layers in between. This forms a residual block. Resnets are made by stacking these residual blocks together. The approach behind this network is instead of layers learning the underlying mapping, we allow the network to fit the residual mapping. So, instead of say H(x), initial mapping, let the network fit,
-            \begin{equation}
-                F(x) := H(x) - x
-            \end{equation}
-            which gives
-            \begin{equation}
-                H(x) := F(x) + x
-            \end{equation}
-            \begin{figure}[hbt!]
-                \center{
-                \includegraphics[width=1\textwidth]{./img/ResNet.PNG}
-                }
-                \caption{ResNet} \cite{enwiki:1205293224}
-            \end{figure}
-
+        
         
         % \subsection{GanttChart}
         %     \begin{figure}[hbt!]
