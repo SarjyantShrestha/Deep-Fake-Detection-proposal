@@ -2,7 +2,7 @@
 Deepfakes, which involve sharing facial images without permission, are often carried out without the knowledge or consent of individuals such as celebrities or politicians. At first, swapping of face image was done in the photo of Abraham Lincoln(Badale et al., 2018)\cite{badale2018deep}. Yang, Li \& Lyu (2019)\cite{yang2019exposing} have proposed a model to detect deep fake using head poses inconsistency. Yadav \& Salmani (2019)\cite{yadav2019deepfake} have described the working principle of the deep fake techniques along with swapping of face images in a high precision value.
 
 \section{Deepfake Generation Techniques of Faces}
-StarGAN \cite{choi2018stargan}, proposed by Choi et al., is a method capable of performing imageto-image translations on multiple domains (such as change hair color, change gender,
+StarGAN \cite{choi2018stargan}, proposed by Choi et al., is a method capable of performing image-to-image translations on multiple domains (such as change hair color, change gender,
 etc.) using a single model. Trained on two different types of face datasets—CelebA \cite{7410782}
 containing 40 labels related to facial attributes such as hair color, gender and age, and
 RaFD dataset \cite{cho2019imagetoimage} containing 8 labels corresponding to different types of facial expressions
@@ -18,7 +18,7 @@ StyleGAN. \cite{Giudice_2021}
 \section{Deepfake Detection Techniques}
 HFM images dataset and soft computing neural network models (SFFN) with an effective facial manipulating detection process were presented by Lee et al. (2021)\cite{lee2021detecting}. The SFFN model is capable of identifying fake images by focusing on altered facial landmarks, using only RGB information and no metadata. The method showed improved performance in AUC, with a 3.99\% F1-score and 2.91\% AUC for detecting handcrafted fake facial images, and 93.99\% accuracy for detecting small GANs-generated fake images.
 
-Guo et al. (2021)\cite{guo2021fake} developed an AMTEN for image preprocessing. This component uses a convolution layer to retrieve photo manipulation traces, with weights adjusted during backpropagation for optimization. They also created a false face detector, AMTENnet, by combining AMTEN with a CNN. The manipulation traces from AMTEN are processed through the CNN to develop discriminative characteristics. Tests showed that AMTENnet achieved higher detection accuracy and generalization capabilities, outperforming other methods on the Hybrid Fake Face (HFF) dataset by 7.61\%.
+Guo et al. (2021)\cite{guo2021fake} developed an AMTEN for image preprocessing. This component uses a convolution layer to retrieve photo manipulation traces, with weights adjusted during backpropagation for optimization. They also created a false face detector, AMTENnet, by combining AMTEN with a CNN. The manipulation traces from AMTEN are processed through the CNN to develop discriminative characteristics. Tests showed that AMTENnet achieved higher detection accuracy and generalization capabilities, outperforming other methods on the Hybrid Fake Face (HFF) dataset\cite{AMTEN} by 7.61\%.
 
 Guarnera et al. (2020)\cite{guarnera2020fighting} completed a study on deepfake image analysis using an expectation-maximization technique to extract Convolutional Traces (CTs), a unique fingerprint that can identify if a photo is a deepfake and the GANs architecture that created it. The CT is resistant to attacks and independent of high-level picture concepts. The study found that a simple and fast-to-compute method could outperform more complex ones. By rotating input images to find the most significant direction, performance could be improved. The method achieved an overall classification accuracy of over 98\% on deepfakes from 10 different GAN architectures. It also performed well in a real-world setting, achieving 93\% accuracy on deepfakes created by the FACE application.
 
@@ -28,30 +28,121 @@ J. Yang et al. (2021)\cite{yang2021detecting} developed a method to detect the s
 
 Hsu et al. (2020) \cite{hung2021multi} developed a method to recognize fake images created by advanced GANs. Their approach involves a fake feature network-based paired learning system that can learn mid and high-level false features by combining cross-layer feature representations. They modified a reduced DenseNet into a two-stream network structure that can handle paired data. This network is trained to distinguish between the features of real and fake photos. A classification layer is added to determine if the input image is real or fake. Their system allows for learning of fake features, enabling the detector to recognize fake images created by a new GAN not included in the training phase. The results demonstrated that their method outperformed other techniques in terms of accuracy and recall rates.
 
+\newpage
+\subsection{Deepfake Detection and Reconstruction Challenge Ranking}
+Most researchers participated in the Deepfake Images Detection and Reconstruction
+Challenge. Only seven teams submitted a solution and some of them are reported
+in this paper (only the solutions with classification accuracy values above 60\% and only
+all the teams that actively participated in the ICIAP conference). Table 2.1 summarizes the
+classification accuracy scores of the submitted solutions. The winning team
+was VisionLabs, a team composed of Nikita Koritsky and Aleksandr Parkin, who employed
+an EfficientNet architecture \cite{pmlr-v97-tan19a} (specifically EfficientNet B3) with pre-trained weights on
+ImageNet. During training, various preprocessing such as scaling, JPEG compression from
+45 to 100 with probability 0.5, hue saturation, gray transformation with probability 0.2,
+and many others were applied. To increase the robustness of CNN against various types
+of corruption, this team used rather severe increments, including JPEG compression and
+Gaussian blurring with large kernels. Pre-trained torchvision models were used in the
+experiments and tuned for 15 epochs with the Radam optimizer\cite{liu2021variance}. The learning rate was
+set to 0.001 and the batch size was set to 32. In the inference step, a threshold obtained on
+the validation set was used to binarize the obtained values. An Equal Error Rate (resulting
+in 0.26) was used to calculate the threshold. \cite{jimaging8100263}
+\vspace{1cm}
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|l|c|}
+\hline
+\textbf{Rank} & \textbf{Team Name} & \textbf{Accuracy (\%)} \\
+\hline
+1 & VisionLabs & 93.61 \\
+2 & DC-GAN (Amped Team) & 90.05 \\
+3 & Team Nirma & 75.38 \\
+4 & AIMH Lab & 72.62 \\
+5 & PRA Lab—Div. Biometria & 63.97 \\
+6 & Team Wolfpack & 40.61 \\
+7 & SolveKaro & 36.85 \\
+\hline
+\end{tabular}
+\caption{Accuracy Rankings}
+\label{tab:accuracy-rankings}
+\end{table} \\\\
+Table 2.2 shows in detail the results obtained by the participants.
+Precision, Recall and F1-score values for each class are shown.
+
+\begin{table}[h]
+    \centering
+    \label{tab:comparison}
+    \begin{tabular}{|l|c|c|c|}
+    \hline
+     & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} \\ \hline
+    \textbf{VisionLabs} &  &  &  \\ \hline
+    Real & 0.89 & 0.88 & 0.89 \\ 
+    Deepfake & 0.95 & 0.96 & 0.96 \\ 
+    Accuracy & 0.94 & & \\ 
+    Macro avg & 0.92 & 0.92 & 0.92 \\ 
+    Weighted avg & 0.94 & 0.94 & 0.94 \\ \hline
+    \textbf{DC-GAN (Amped Team)} & & & \\ \hline
+    Real & 0.86 & 0.78 & 0.82 \\ 
+    Deepfake & 0.92 & 0.95 & 0.93 \\ 
+    Accuracy & 0.90 & & \\ 
+    Macro avg & 0.89 & 0.87 & 0.88 \\ 
+    Weighted avg & 0.90 & 0.90 & 0.90 \\ \hline
+    \textbf{Team Nirma} & & & \\ \hline
+    Real & 0.55 & 0.80 & 0.65 \\ 
+    Deepfake & 0.90 & 0.74 & 0.81 \\ 
+    Accuracy & 0.75 & & \\ 
+    Macro avg & 0.72 & 0.77 & 0.73 \\ 
+    Weighted avg & 0.80 & 0.75 & 0.76 \\ \hline
+    \textbf{AIMH Lab} & & & \\ \hline
+    Real & 0.52 & 0.49 & 0.51 \\ 
+    Deepfake & 0.80 & 0.82 & 0.81 \\ 
+    Accuracy & 0.73 & & \\ 
+    Macro avg & 0.66 & 0.66 & 0.66 \\ 
+    Weighted avg & 0.72 & 0.73 & 0.72 \\ \hline
+    \textbf{PRA Lab—Div. Biometria} & & & \\ \hline
+    Real & 0.43 & 0.76 & 0.55 \\ 
+    Deepfake & 0.86 & 0.59 & 0.70 \\ 
+    Accuracy & 0.64 & & \\ 
+    Macro avg & 0.64 & 0.68 & 0.62 \\ 
+    Weighted avg & 0.74 & 0.64 & 0.66 \\ \hline
+    \textbf{Team Wolfpack} & & & \\ \hline
+    Real & 0.05 & 0.06 & 0.05 \\ 
+    Deepfake & 0.59 & 0.55 & 0.57 \\ 
+    Accuracy & 0.41 & & \\ 
+    Macro avg & 0.32 & 0.30 & 0.31 \\ 
+    Weighted avg & 0.44 & 0.41 & 0.42 \\ \hline
+    \textbf{SolveKaro} & & & \\ \hline
+    Real & 0.17 & 0.31 & 0.22 \\ 
+    Deepfake & 0.59 & 0.39 & 0.47 \\ 
+    Accuracy & 0.37 & & \\ 
+    Macro avg & 0.38 & 0.35 & 0.34 \\ 
+    Weighted avg & 0.47 & 0.37 & 0.40 \\ \hline
+    \end{tabular}
+    \caption{Comparison of Performance Metrics of Each Team}
+\end{table}
 %  The risks inherent in deepfakes, including defamation of character, potential harm to individuals, and the spread of fake news throughout society, highlight the importance of addressing these challenges.
  
 %  Existing approaches suffer from problems such as inefficiency in deepfake image detection, high error rates, long computation times, and data access inaccuracies.
 %  Our work focuses on improving efficiency through a different approach to using ResNet architecture for deepfake detection.
-There have been many approaches to detect image deepfake. Figure 1 (Heidari et al., 2023) \cite{heidari2023deepfake}  shows some of the advancements in the Image Deepfake techniques.
+% There have been many approaches to detect image deepfake. Figure 1 (Heidari et al., 2023) \cite{heidari2023deepfake}  shows some of the advancements in the Image Deepfake techniques.
 
-\begin{table}
-\caption{Image Deepfake Techniques}
-\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
-  \hline
-  \textbf{Authors} & \textbf{Main Idea} & \textbf{Advantages} & \textbf{Dataset} & \textbf{Method} \\ \hline
-  Zhang Zhao, and Li (2020) \cite{zhang2020novel} & Using a binary classifier trained by a CNN & The achieved accuracy was 97\%, The AUC stood at 97.6\% & Milborrow University of Cape Town dataset & CNN \\ \hline
-  Lee et al. (2021) \cite{lee2021detecting}& Suggesting an approach with an effective end-to-end false face detection pipeline  that can identify fake face pictures. & Obtaining 72.52\% AUC, Obtaining 93.99\% accuracy on difficult low-resolution pictures & HFM dataset & GAN \\ \hline
-  Guo et al. (2021) \cite{guo2021fake}& Providing a preprocessing module named AMTEN for face image forensics & AMTENnet achieves an average accuracy of up to 98.52\%, Achieves desirable preprocessing & HEF dataset & CNN \\ \hline
-  Guarnera et al. (2020) \cite{guarnera2020fighting} & Presenting an expectation-maximization method trained to identify and extract a fingerprint & Obtaining a 93\% accuracy rate, In a real-world scenario, efficacy is demonstrated, High robustness & The FACEAPP, a dataset, and CelebA images & Expectation-maximization + CNN \\ \hline
-  I.-J. Yu et al. (2020) \cite{yu2020manipulation} & Presenting the MCNet to utilize multi-domain spatial, frequency, and compression domain characteristics & High robustness, High accuracy & ALASKA dataset & CNN \\ \hline
-\end{tabularx}
-\end{table}
+% \begin{table}
+% \caption{Image Deepfake Techniques}
+% \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+%   \hline
+%   \textbf{Authors} & \textbf{Main Idea} & \textbf{Advantages} & \textbf{Dataset} & \textbf{Method} \\ \hline
+%   Zhang Zhao, and Li (2020) \cite{zhang2020novel} & Using a binary classifier trained by a CNN & The achieved accuracy was 97\%, The AUC stood at 97.6\% & Milborrow University of Cape Town dataset & CNN \\ \hline
+%   Lee et al. (2021) \cite{lee2021detecting}& Suggesting an approach with an effective end-to-end false face detection pipeline  that can identify fake face pictures. & Obtaining 72.52\% AUC, Obtaining 93.99\% accuracy on difficult low-resolution pictures & HFM dataset & GAN \\ \hline
+%   Guo et al. (2021) \cite{guo2021fake}& Providing a preprocessing module named AMTEN for face image forensics & AMTENnet achieves an average accuracy of up to 98.52\%, Achieves desirable preprocessing & HEF dataset & CNN \\ \hline
+%   Guarnera et al. (2020) \cite{guarnera2020fighting} & Presenting an expectation-maximization method trained to identify and extract a fingerprint & Obtaining a 93\% accuracy rate, In a real-world scenario, efficacy is demonstrated, High robustness & The FACEAPP, a dataset, and CelebA images & Expectation-maximization + CNN \\ \hline
+%   I.-J. Yu et al. (2020) \cite{yu2020manipulation} & Presenting the MCNet to utilize multi-domain spatial, frequency, and compression domain characteristics & High robustness, High accuracy & ALASKA dataset & CNN \\ \hline
+% \end{tabularx}
+% \end{table}
 
-\pagebreak
-\begin{table}[ht]
-\begin{tabularx}{\textwidth}{|X|X|X|X|X|}\hline
-  J Yang et al. (2021) \cite{yang2021detecting} & Using the image saliency to determine the texture depth and pixel difference between actual and fake facial images.& Detection accuracy is 99.90\% & Faceforensics++ dataset & CNN + simple linear iterative clustering \\ \hline  
+% \pagebreak
+% \begin{table}[ht]
+% \begin{tabularx}{\textwidth}{|X|X|X|X|X|}\hline
+%   J Yang et al. (2021) \cite{yang2021detecting} & Using the image saliency to determine the texture depth and pixel difference between actual and fake facial images.& Detection accuracy is 99.90\% & Faceforensics++ dataset & CNN + simple linear iterative clustering \\ \hline  
 
-  Hsu et al.(2020) \cite{hung2021multi} & Presenting an image detector comprised of an enhanced DenseNet backbone network and Slamese network architecture. & Achieving a modest level of precision and recall & CelebA & Pairwise learning \\ \hline
-\end{tabularx}
-\end{table}
+%   Hsu et al.(2020) \cite{hung2021multi} & Presenting an image detector comprised of an enhanced DenseNet backbone network and Slamese network architecture. & Achieving a modest level of precision and recall & CelebA & Pairwise learning \\ \hline
+% \end{tabularx}
+% \end{table}
