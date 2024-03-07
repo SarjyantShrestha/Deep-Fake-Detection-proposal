@@ -33,13 +33,14 @@
             \end{equation}
             \begin{figure}[hbt!]
                 \center{
-                \includegraphics[width=0.95\textwidth]{./img/ResNet.PNG}
+                \includegraphics[width=0.9\textwidth]{./img/ResNet.PNG}
                 }
                 \caption{ResNet} \cite{enwiki:1205293224}
             \end{figure}
 
 		\pagebreak
-        \subsection{Data Collection}
+		\subsection{Data Preprocessing}
+        \subsubsection{Data Collection}
         We used dataset created during a Deepfake Image Detection and Reconstruction Challenge.Two datasets of real face images were used: CelebA and FFHQ. Various Deepfake images were generated using architectures such as StarGAN, GDWCT, AttGAN, StyleGAN, and StyleGAN2. Specifically, CelebA images were manipulated using pre-trained models available on GitHub for StarGAN, GDWCT, and AttGAN. Images from StyleGAN and StyleGAN2 created through FFHQ were obtained.
         
         \begin{enumerate}
@@ -73,7 +74,7 @@
             \end{minipage}
         \end{figure}
 
-    \subsection{Data Augmentation}
+    \subsubsection{Data Augmentation}
     To balance our dataset, we augmented our images to achieve a total of 25000 images for each category. For the 5000 fake images, we applied four different transformations, resulting in 20000 augmented fake images. For the real images, we randomly selected and transformed 3750 images, generating 15000 augmented real images. \\\\
     The transformations applied were as follows:
     \begin{enumerate}
@@ -113,7 +114,7 @@
 		\end{minipage}
 	\end{figure}
 	\pagebreak
-	\subsection{Data Normalization}
+	\subsubsection{Data Normalization}
 	First, we computed the mean and standard deviation of the entire dataset, which consists of both the original dataset and the augmented dataset. The normalization process was then applied using the following formula:
 	\begin{equation}
 	x = \frac{x - \mu}{\sigma}
@@ -122,7 +123,7 @@
 	This approach standardizes the features to have a mean of 0 and a standard deviation of 1. This standardization is crucial because certain machine learning algorithms are sensitive to the scale of the input features.
 
 	\pagebreak
-    \subsection{Data Splitting}
+    \subsubsection{Data Splitting}
         We partitioned our dataset into a training set, comprising 80\% of the dataset, and a validation set, consisting of 20\% of the dataset. This division ensures that the model has an ample amount of data for learning, while also offering a subset of the data to assess the model's performance.
 
 	\subsection{Setting Parameters}
